@@ -6,6 +6,11 @@ void reportStatus(int status) {
     printf("exit value %d \n", status);
 } 
 
+void changeDirectory(char* directory) {
+    char* homedir = getenv("HOME");
+    printf("%s \n", homedir);    
+}
+
 void runShell() {
 
     char command[25];
@@ -24,7 +29,7 @@ void runShell() {
         }
 
         else if (strcmp(command, "cd") == 0)
-            printf("change directory \n");
+            changeDirectory(command);
 
         else if (strcmp(command, "status") == 0)
             reportStatus(0);
